@@ -11,10 +11,10 @@ notes, data and solutions in the same repo.
 | `main`    | A clean mirror of the course repo. **I never commit here.**      |
 | `my-work` | Everything of mine. This is the branch I work on day to day.     |
 
-| Remote     | Points at                                        |
-|------------|--------------------------------------------------|
-| `origin`   | `glueckf/ML_course` — my fork                    |
-| `upstream` | `epfml/ML_course` — the course repo (read-only)  |
+| Remote     | Points at                                                |
+|------------|----------------------------------------------------------|
+| `origin`   | `glueckf/CS_433_Machine_Learning` — my fork              |
+| `upstream` | `epfml/ML_course` — the course repo (read-only)          |
 
 ## Day to day
 
