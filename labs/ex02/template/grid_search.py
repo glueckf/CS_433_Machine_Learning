@@ -2,9 +2,12 @@
 """Exercise 2.
 
 Grid Search
+
+Kept in sync with ``ex02.ipynb``; see the Wrap-Up section of that notebook.
 """
 
 import numpy as np
+
 from costs import compute_loss
 
 
@@ -21,8 +24,33 @@ def get_best_parameters(w0, w1, losses):
     return losses[min_row, min_col], w0[min_row], w1[min_col]
 
 
-# ***************************************************
-# INSERT YOUR CODE HERE
-# TODO: Paste your implementation of grid_search
-#       here when it is done.
-# ***************************************************
+def grid_search(
+    y: np.ndarray,
+    tx: np.ndarray,
+    grid_w0: np.ndarray,
+    grid_w1: np.ndarray,
+    loss_type: str = "mse",
+) -> np.ndarray:
+    """Algorithm for grid search.
+
+    Args:
+        y: numpy array of shape=(N, )
+        tx: numpy array of shape=(N, 2)
+        grid_w0: numpy array of shape=(num_grid_pts_w0, ). A 1D array containing
+            num_grid_pts_w0 values of parameter w0 to be tested in the grid search.
+        grid_w1: numpy array of shape=(num_grid_pts_w1, ). A 1D array containing
+            num_grid_pts_w1 values of parameter w1 to be tested in the grid search.
+        loss_type: the cost function to evaluate on the grid, ``"mse"`` or ``"mae"``.
+
+    Returns:
+        losses: numpy array of shape=(num_grid_pts_w0, num_grid_pts_w1). A 2D array
+            containing the loss value for each combination of w0 and w1.
+    """
+    losses = np.zeros((len(grid_w0), len(grid_w1)))
+
+    # One for-loop per dimension, as asked in the exercise sheet.
+    for i, w0 in enumerate(grid_w0):
+        for j, w1 in enumerate(grid_w1):
+            w = np.array([w0, w1])
+            losses[i, j] = compute_loss(y, tx, w, loss_type)
+    return losses
