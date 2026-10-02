@@ -28,4 +28,4 @@ def least_squares(y, tx):
     pred = tx.dot(w)
     err = y - pred
     mse = err.dot(err) / (2*len(err))
-    return (w, mse)
+    return w, float(mse)
