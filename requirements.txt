@@ -1,0 +1,30 @@
+# Environment for the "Python (CS-433 ML)" Jupyter kernel.
+# Recreate with:
+#   uv venv --python 3.13 .venv && uv pip install --python .venv -r requirements.txt
+#   .venv/bin/python -m ipykernel install --user --name cs433 --display-name "Python (CS-433 ML)"
+
+# Jupyter
+ipykernel
+ipywidgets
+
+# Core scientific stack
+numpy
+scipy
+pandas
+matplotlib
+seaborn
+scikit-learn
+
+# Deep learning (later labs)
+torch
+torchvision
+
+# Project 1 grading tests (projects/project1/grading_tests)
+pytest
+pytest-mock
+pytest-csv
+black
+gitpython
+
+# Utilities
+tqdm
